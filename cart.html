@@ -13,6 +13,7 @@
             @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
         </style>
         <link rel="stylesheet" href="./style.css">
+        <script src="./jquery-3.6.0.js"></script> 
         <script src="./script.js" defer></script> 
     </head>
     <body class="cart__body">
@@ -51,22 +52,38 @@
             </div>
             <!-- 카트에 담기 버튼 누른 NFT 보이는 부분-->
             <div class="wrap cf">
-                <h1 class="projTitle">Shopping Cart</h1>
                 <div class="heading cf">
                     <h1>My Cart</h1>
                     <a href="#" class="continue">Continue Shopping</a>
                 </div>
                 <div class="cart">
-                    <!-- 첫번쨰 아이템 -->
                     <ul class="cartWrap">
-                        <li class="items odd">
+                        <!-- 첫번쨰 아이템 -->
+                        <li class="items">
                             <div class="infoWrap">
                                 <div class="cartSection">
                                     <img src="img/collect.png" class="itemImg"/>
                                     <p class="itemNumber">Collection name<span>by User Name</span></p>
                                     <h3>NFT name</h3>
+                                    <p class="stockStatus">On Sale</p>
+                                </div>
+                                <div class="prodTotal cartSection">
+                                    <img src="img/moonstone_2.png" class="moonstone">
                                     <p>30.00</p>
-                                    <p class="stockStatus"> On Sale</p>
+                                </div>
+                                <div class="cartSection removeWrap">
+                                    <a class="remove">x</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 두번쨰 아이템 -->
+                        <li class="item">
+                            <div class="infoWrap">
+                                <div class="cartSection">
+                                    <img src="img/collect.png" class="itemImg"/>
+                                    <p class="itemNumber">Collection name<span>by User Name</span></p>
+                                    <h3>NFT name</h3>
+                                    <p class="stockStatus">Out of Sales</p>
                                 </div>
                                 <div class="prodTotal cartSection">
                                     <img src="img/moonstone_2.png" class="moonstone">
@@ -77,9 +94,60 @@
                                 </div>
                             </div>
                         </li>
-                        <!-- 두번쨰 아이템 -->
-                        <li class="item even">
-
+                        <!-- 세번쨰 아이템 -->
+                        <li class="items">
+                            <div class="infoWrap">
+                                <div class="cartSection">
+                                    <img src="img/collect.png" class="itemImg"/>
+                                    <p class="itemNumber">Collection name<span>by User Name</span></p>
+                                    <h3>NFT name</h3>
+                                    <p class="stockStatus">On Sale</p>
+                                </div>
+                                <div class="prodTotal cartSection">
+                                    <img src="img/moonstone_2.png" class="moonstone">
+                                    <p>30.00</p>
+                                </div>
+                                <div class="cartSection removeWrap">
+                                    <a href="#" class="remove">x</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 네번쨰 아이템 -->
+                        <li class="items">
+                            <div class="infoWrap">
+                                <div class="cartSection">
+                                    <img src="img/collect.png" class="itemImg"/>
+                                    <p class="itemNumber">Collection name<span>by User Name</span></p>
+                                    <h3>NFT name</h3>
+                                    <p class="stockStatus">Out of Sale</p>
+                                </div>
+                                <div class="prodTotal cartSection">
+                                    <img src="img/moonstone_2.png" class="moonstone">
+                                    <p>30.00</p>
+                                </div>
+                                <div class="cartSection removeWrap">
+                                    <a href="#" class="remove">x</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="subtotal cf">
+                    <ul>
+                        <li class="totalRow">
+                            <span class="label">Subtotal</span>
+                            <span class="value"> 35.00</span>
+                        </li>
+                        <li class="totalRow">
+                            <span class="label">Tax</span>
+                            <span class="value"> 4.00</span>
+                        </li>
+                        <li class="totalRow final">
+                            <span class="label">Total</span>
+                            <span class="value"> 44.00</span>
+                        </li>
+                        <li class="totalRow">
+                            <a href="#" class="btn continue">Checkout</a>
                         </li>
                     </ul>
                 </div>

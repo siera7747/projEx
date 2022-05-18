@@ -276,4 +276,337 @@ p{
 }
 
 /* archives - cart (카트 버튼 누른 NFT 보이는 부분)*/
+.cf:before,.cf:after {content: " ";display: table;}
+.cf:after {clear: both;}
+.cf {*zoom: 1;}
 
+.wrap {
+    width: 75%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5% 0;
+    margin-bottom: 5em;
+}
+.heading {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--color-violet-1);
+}
+.heading h1 {
+    font-size: 2em;
+    float: left;
+}
+a.continue:link , a.continue:visited {
+    text-decoration: none;
+    letter-spacing: -.015em;
+    font-size: .75em;
+    padding: 1em;
+    color: #fff;
+    background: var(--color-violet-3);
+    font-weight: bold;
+    border-radius: 50px;
+    float: right;
+    text-align: right;
+    transition : all, .25s, linear;
+}
+a.continue:after {
+    content: "\276f";
+    padding: .5em;
+    position: relative;
+    right:0;
+    transition : all, .15s, linear;
+}
+a.continue:hover , a.continue:focus, a.continue:active {
+    background: #f69679;    
+}
+a.continue:hover:after, a.continue:focus:after, a.continue:active:after {
+    right: -10px;
+}
+
+.cart {
+    padding: 1em 0 ;
+}
+.items {
+    display: inline;
+    vertical-align: middle;
+    width: 100%;
+    padding: 1.5em;
+}
+.cartWrap{
+    display: inline-block;
+    justify-content: center;
+}
+.cart.items.infoWrap {
+    display: table;
+    width: 100%;
+}
+.cartSection {
+    display: table-cell;
+    vertical-align: middle;
+}
+.cartSection.itemNumber {
+    font-size: .75em;
+    color: #777;
+    margin-bottom: .5em;
+}
+.cartSection h3 {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+}
+.cartSection p {
+    display: inline-block;
+    font-size: .85em;
+    color: #777777;
+}
+.cartSection p.stockStatus {
+    color: #f30;
+    font-weight: bold;
+    padding: .5em 0 1em 1em;
+    text-transform: uppercase;
+}
+.itemImg {
+    width: 12em;
+    float: left;
+}
+.cartSection.prodTotal p{
+    font-weight: bold;
+    font-size: 1.25em;
+}
+.cartSection.prodTotal img{
+    width: 4em;
+    float: right;
+}
+a.remove {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    background: var(--color-violet-3);
+    padding: .5em;
+    font-size: .75em;
+    display: inline-block;
+    border-radius: 100%;
+    line-height: .85;
+    transition: all, .25s, linear;
+}
+a.remove:hover {
+    background: #f30;
+}
+.promoCode {
+    border:2px solid #efefef;
+    float: left;
+    width: 35%;
+    padding: 2%;
+}
+.promoCode label {
+    display: block;
+    width: 100%;
+    font-style: italic;
+    font-size: 1.15em;
+    margin-bottom: .5em;
+    letter-spacing: -.025em;
+}
+.btn.promoCode{
+   font-size: .85em;
+   padding: .5em 2em;
+}
+.btn:link , .btn:visited {
+    text-decoration: none;
+    letter-spacing: -.015em;
+    font-size: 1em;
+    padding: 1em 3em;
+    color: #fff;
+    background: var(--color-violet-3);
+    font-weight: bold;
+    border-radius: 50px;
+    float: right;
+    text-align: right;
+    transition: all, .25s, linear;
+}
+.btn:link:after, .btn:visited:after {
+    content: "\276f";
+    padding: .5em;
+    position: relative;
+    right:0;
+    transition: all, .15s, linear;
+}
+.btn:link:after:hover , .btn:link:after:focus, .btn:link:after:active {
+    background: #f69679;
+}
+.btn:link:after:hover:after , .btn:link:after:focus:after, .btn:link:after:active:after {
+    right: -10px;
+}
+.btn:visited:after:hover , .btn:visited:after:focus, .btn:visited:after:active {
+    background: #f69679;
+}
+.btn:visited:after:hover:after , .btn:visited:after:focus:after, .btn:visited:after:active:after {
+    right: -10px;
+}
+.subtotal {
+    float: right;
+    width: 35%;
+}
+.totalRow {
+    padding: .5em;
+    text-align: right;
+}
+.totalRow.final {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.subtotal.totalRow span {
+    display: inline-block;
+    padding: 0 0 0 1em;
+    text-align: right;   
+}
+.subtotal.totalRow.label {
+   font-size: .85em;
+   text-transform: uppercase;
+   color: #777;
+}
+.subtotal.totalRow.value { 
+    letter-spacing: -.025em;
+    width: 35%;
+}
+
+/* archives - buy and sell (보유 중인 NFT 보이는 부분)*/
+.nft__container{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin: auto;
+    
+}
+.check__txt{
+    font-size: var(--font-medium);
+    color : var(--color-pink-1);
+    line-height: 150px;
+}
+.check__container{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+}
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 100px;
+	height: 50px;
+	background: var(--color-pink-1);
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 40px;
+	height: 40px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.1s;
+}
+input:checked + label {
+	background: var(--color-pink-1);
+}
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+label:active:after {
+	width: 130px;
+}
+.input__price{
+    width:80px;
+}
+
+.sell__btn, .cancle__btn{
+    font-size: var(--font-micro);
+    font-weight: var(--weight-semi-bold);
+    color: #fff;
+    background: var(--color-violet-3);
+    margin: 5px;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+.sell__btn:hover, .cancle__btn:hover{
+    background: var(--color-pink-1);
+}
+
+/* 판매 모달창*/
+
+body.modal-active{
+    overflow: hidden;
+}
+#modal-container {
+    position:fixed;
+    display:table;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    transform:scale(0);
+    z-index:1;
+}
+#modal-container.sell {
+    transform:scaleY(.01) scaleX(0);
+    animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+#modal-container.sell.modal-background.modal {
+    transform:scale(0);
+    animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+#modal-container.out {
+    transform:scale(1);
+    animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+#modal-container.out.modal-background.modal {
+    animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+@keyframes unfoldIn {
+    0% {
+      transform:scaleY(.005) scaleX(0);
+    }
+    50% {
+      transform:scaleY(.005) scaleX(1);
+    }
+    100% {
+      transform:scaleY(1) scaleX(1);
+    }
+}
+@keyframes zoomIn {
+    0% {
+      transform:scale(0);
+    }
+    100% {
+      transform:scale(1);
+    }
+}
+@keyframes unfoldOut {
+    0% {
+      transform:scaleY(1) scaleX(1);
+    }
+    50% {
+      transform:scaleY(.005) scaleX(1);
+    }
+    100% {
+      transform:scaleY(.005) scaleX(0);
+    }
+}
+@keyframes zoomOut {
+    0% {
+      transform:scale(1);
+    }
+    100% {
+      transform:scale(0);
+    }
+}
