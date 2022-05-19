@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OwlBox</title>
+
+        <link rel="icon" type="image/png" href="img/icon.png" >
+        <script src="https://kit.fontawesome.com/c9ab076429.js" crossorigin="anonymous"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+        </style>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./jquery-3.6.0.js"></script> 
+        <script src="./script.js" defer></script> 
+    </head>
+    <body>
+
+        <!-- navbar -->
+        <nav id="navbar">
+            <div class="navbar__logo">
+                <img src="img/logo.png" alt="Logo" width="200" height="100">
+            </div>
+            <div class="navbar__menu">
+                <ul class="navbar__menu">
+                    <li class="navbar__menu__item">Collection</li>
+                    <li class="navbar__menu__item active">Admin</li>
+                    <li class="navbar__menu__item">Board</li>
+                    <li class="navbar__menu__item">SignOut</li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- home -->
+        <section id="home">
+            <img src="img/icon.png" alt="profile photo" class="home__avater">
+            <h1 class="home__title">Admin</h1>
+        </section>
+
+        <!-- archives -->
+        <section id="archives" class="section">
+            <div class="section__container">
+                <div class="work__categories">
+                    <button class="category__btn">Members</span></button>
+                    <button class="category__btn">Approval</span></button>
+                </div>
+            </div>
+            <!-- 회원 리스트 보이는 부분 -->
+            <h1 class="memboard">OwlBox Member List</h1>
+            <div class="tbl-header">
+                <table class="memboard" cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                          <th>No</th>
+                          <th>ID</th>
+                          <th>Collections</th>
+                          <th>Upload</th>
+                          <th>Buy</th>
+                          <th>Sell</th>
+                          <th>Wallet</th>
+                          <th>MoonStone</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                </table>
+            </div>
+            <div class="tbl-content tbl-bg">
+                <table class="memboard" cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>pikachu</td>
+                            <td>1</td>
+                            <td>20</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>70</td>
+                            <td class="tbl-btns">
+                                <button>
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <button>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button>
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>kkuwax</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>15</td>
+                            <td class="tbl-btns">
+                                <button>
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <button>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button>
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- foot -->
+        <section id="foot">
+        </section>
+    </body>
+</html>

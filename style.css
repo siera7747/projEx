@@ -88,6 +88,12 @@ button{
 button:active {
 	transform: scale(0.95);
 }
+figure:active{
+    transform: scale(0.95);
+}
+li:active{
+    transform: scale(0.95);
+}
 p{
     margin-top: 0;
     margin-bottom: 0;
@@ -171,6 +177,19 @@ p{
     border-radius: 50%;
     border: 2px solid var(--color-light-white);
 }
+/* others (다른회원의 콜렉션 들어갔을 때 홈 영역)*/
+#others-home {
+    background: url("img/coll-img.png") center/cover no-repeat;
+    padding: 20px;
+    padding-top: 400px;
+    text-align: center;
+}
+.others-home__avater {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--color-light-white);
+}
 
 /* footer */
 #foot{
@@ -197,6 +216,26 @@ p{
 
 /* archives - my collection (내가 만든 콜렉션 보이는 부분)*/
 /* archives - likes (좋아요 누른 NFT 보이는 부분)*/
+.about__disc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 50px 0;
+}
+.about__disc h2{
+    margin-right: 25px;
+}
+.about__disc button{
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+    font-size: var(--font-medium);
+}
+.about__disc button:hover{
+    background: var(--color-white);
+    color: var(--color-pink-1);
+}
+
 .about__collection{
     display: flex;
     justify-content: center;
@@ -330,6 +369,7 @@ a.continue:hover:after, a.continue:focus:after, a.continue:active:after {
     vertical-align: middle;
     width: 100%;
     padding: 1.5em;
+    margin: auto;
 }
 .cartWrap{
     display: inline-block;
@@ -345,7 +385,7 @@ a.continue:hover:after, a.continue:focus:after, a.continue:active:after {
 }
 .cartSection.itemNumber {
     font-size: .75em;
-    color: #777;
+    color: var(--color-black);
     margin-bottom: .5em;
 }
 .cartSection h3 {
@@ -357,7 +397,7 @@ a.continue:hover:after, a.continue:focus:after, a.continue:active:after {
 .cartSection p {
     display: inline-block;
     font-size: .85em;
-    color: #777777;
+    color: var(--color-black);
 }
 .cartSection p.stockStatus {
     color: #f30;
@@ -369,13 +409,13 @@ a.continue:hover:after, a.continue:focus:after, a.continue:active:after {
     width: 12em;
     float: left;
 }
-.cartSection.prodTotal p{
-    font-weight: bold;
-    font-size: 1.25em;
-}
 .cartSection.prodTotal img{
     width: 4em;
     float: right;
+}
+.cartSection.prodTotal p{
+    font-weight: bold;
+    font-size: 1.25em;
 }
 a.remove {
     text-decoration: none;
@@ -478,10 +518,33 @@ a.remove:hover {
     margin: auto;
     
 }
-.check__txt{
+.check__txt_1{
     font-size: var(--font-medium);
-    color : var(--color-pink-1);
+    color : var(--textColor);
     line-height: 150px;
+
+    --textColor : var(--color-pink-1);
+}
+.check__txt_2{
+    font-size: var(--font-medium);
+    color : var(--textColor);
+    line-height: 150px;
+
+    --textColor : var(--color-pink-1);
+}
+.check__txt_1[data-filter='ON STOCK']{
+    font-size: var(--font-medium);
+    color : var(--textColor);
+    line-height: 150px;
+
+    --textColor : var(--color-light-white);
+}
+.check__txt_2[data-filter='ON SALE']{
+    font-size: var(--font-medium);
+    color : var(--textColor);
+    line-height: 150px;
+
+    --textColor : var(--color-light-white);
 }
 .check__container{
     display: flex;
@@ -513,7 +576,7 @@ label:after {
 	height: 40px;
 	background: #fff;
 	border-radius: 90px;
-	transition: 0.1s;
+	transition: 320ms;
 }
 input:checked + label {
 	background: var(--color-pink-1);
@@ -525,88 +588,163 @@ input:checked + label:after {
 label:active:after {
 	width: 130px;
 }
+.check__txt[data-filter='ON STOCK']{
+    color : var(--textColor);
+}
+.check__txt[data-filter='ON SALE']{
+    color : var(--textColor);
+}
 .input__price{
     width:80px;
 }
+.sell__btn, .cancle__btn, .confirm__btn{
+    font-size: var(--font-micro);
+    font-weight: var(--weight-semi-bold);
+    color: #fff;
+    background: var(--color-violet-3);
+    margin-left: 10px;;
+    margin-right: 20px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+.sell__btn:hover, .cancle__btn:hover, .confirm__btn:hover{
+    background: var(--color-pink-1);
+}
 
-.sell__btn, .cancle__btn{
+/* 모달창 */
+.page-wrapper {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+.blur-it {
+    filter: blur(4px);
+}
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+}
+.modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+}
+.modal {
+    width: 300px;
+    height: 222px;
+    display: block;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    transition: all 0.5s ease-in-out;
+}
+.modal-wrapper.open .modal {
+    margin-top: -200px;
+    opacity: 1;
+}
+.modal__head { 
+    width: 100%;
+    height: 55px;
+    padding: 10px 30px;
+    overflow: hidden;
+    background: var(--color-pink-1);
+    border-radius: 10px 10px 0 0;
+}
+.btn-close {
+    font-size: 28px;
+    display: block;
+    float: right;
+    color: #fff;
+    cursor: pointer;
+}
+.modal__content {
+    background: url("img/forest_night.png") center/cover no-repeat;
+    padding: 10%;
+    text-align: center;
+    color: var(--color-pink-1);
+    border-radius: 0 0 10px 10px;
+}
+
+/* 관리자페이지 - 회원리스트  */
+h1.memboard{
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+table.memboard{
+    width:100%;
+    table-layout: fixed;
+}
+.tbl-header{
+    background-color: rgba(255,255,255,0.3);
+}
+.tbl-content{
+    height:300px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.tbl-header th{
+    padding: 20px 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: var(--font-micro);
+    background-color: var(--color-violet-3);
+    color: #fff;
+    text-transform: uppercase;
+}
+.tbl-content td{
+    padding: 15px;
+    text-align: center;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: #fff;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+.tbl-bg{
+    background: url(img/Cloud_night.png) center/cover no-repeat;
+    opacity: 0.8;
+}
+.tbl-btns{
+    display: flex;
+    justify-content: space-between;
+}
+.tbl-content button{
     font-size: var(--font-micro);
     font-weight: var(--weight-semi-bold);
     color: #fff;
     background: var(--color-violet-3);
     margin: 5px;
-    padding: 5px 5px;
+    padding: 5px 13px;
     border-radius: 10px;
 }
-.sell__btn:hover, .cancle__btn:hover{
+.tbl-content button:hover{
     background: var(--color-pink-1);
 }
 
-/* 판매 모달창*/
-
-body.modal-active{
-    overflow: hidden;
+/* 관리자페이지 - 승인  */
+.appr__btn{
+    font-size: var(--font-micro);
+    font-weight: var(--weight-semi-bold);
+    color: #fff;
+    background: var(--color-violet-3);
+    margin-left: 10px;;
+    margin-right: 20px;
+    padding: 10px 10px;
+    border-radius: 10px;
 }
-#modal-container {
-    position:fixed;
-    display:table;
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
-    transform:scale(0);
-    z-index:1;
-}
-#modal-container.sell {
-    transform:scaleY(.01) scaleX(0);
-    animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-}
-#modal-container.sell.modal-background.modal {
-    transform:scale(0);
-    animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-}
-#modal-container.out {
-    transform:scale(1);
-    animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-}
-#modal-container.out.modal-background.modal {
-    animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-}
-@keyframes unfoldIn {
-    0% {
-      transform:scaleY(.005) scaleX(0);
-    }
-    50% {
-      transform:scaleY(.005) scaleX(1);
-    }
-    100% {
-      transform:scaleY(1) scaleX(1);
-    }
-}
-@keyframes zoomIn {
-    0% {
-      transform:scale(0);
-    }
-    100% {
-      transform:scale(1);
-    }
-}
-@keyframes unfoldOut {
-    0% {
-      transform:scaleY(1) scaleX(1);
-    }
-    50% {
-      transform:scaleY(.005) scaleX(1);
-    }
-    100% {
-      transform:scaleY(.005) scaleX(0);
-    }
-}
-@keyframes zoomOut {
-    0% {
-      transform:scale(1);
-    }
-    100% {
-      transform:scale(0);
-    }
+.appr__btn:hover{
+    background: var(--color-pink-1);
 }

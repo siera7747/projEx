@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OwlBox</title>
+
+        <link rel="icon" type="image/png" href="img/icon.png" >
+        <script src="https://kit.fontawesome.com/c9ab076429.js" crossorigin="anonymous"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+        </style>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./jquery-3.6.0.js"></script> 
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <!-- 여긴 로그인 안해도 보이는 nft 목록 페이지-->
+        <!-- navbar -->
+        <nav id="navbar">
+            <div class="navbar__logo">
+                <img src="img/logo.png" alt="Logo" width="200" height="100">
+            </div>
+            <div class="navbar__menu">
+                <ul class="navbar__menu">
+                    <li class="navbar__menu__item active">Collection</li>
+                    <li class="navbar__menu__item">MyPage</li>
+                    <li class="navbar__menu__item">Board</li>
+                    <li class="navbar__menu__item">SignIn</li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- 다른 사람의 home -->
+        <section id="others-home">
+            <img src="img/icon.png" alt="profile photo" class="others-home__avater">
+            <h1>콜렉션명</h1>
+            <h2>작가명</h2>
+        </section>
+
+        <!-- 다른사람 콜렉션안의 nft 보이는 부분 -->
+        <section id="archives" class="section">
+            <div class="section__container">
+
+            </div>
+        </section>
+
+        <!-- foot -->
+        <section id="foot">
+        </section>
+    </body>
+</html>

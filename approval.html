@@ -17,6 +17,7 @@
         <script src="./script.js" defer></script> 
     </head>
     <body>
+        
         <!-- navbar -->
         <nav id="navbar">
             <div class="navbar__logo">
@@ -25,7 +26,7 @@
             <div class="navbar__menu">
                 <ul class="navbar__menu">
                     <li class="navbar__menu__item">Collection</li>
-                    <li class="navbar__menu__item active">MyPage</li>
+                    <li class="navbar__menu__item active">Admin</li>
                     <li class="navbar__menu__item">Board</li>
                     <li class="navbar__menu__item">SignOut</li>
                 </ul>
@@ -35,125 +36,74 @@
         <!-- home -->
         <section id="home">
             <img src="img/icon.png" alt="profile photo" class="home__avater">
-            <h1 class="home__title">member ID</h1>
+            <h1 class="home__title">Admin</h1>
         </section>
 
         <!-- archives -->
-        <section id="archives" class="section page-wrapper">
+        <section id="archives" class="section">
             <div class="section__container">
                 <div class="work__categories">
-                    <button class="category__btn">MyCollection</button>
-                    <button class="category__btn">Likes</button>
-                    <button class="category__btn">Cart</button>
-                    <button class="category__btn">Buy&Sell</button>
+                    <button class="category__btn">Members</span></button>
+                    <button class="category__btn">Approval</span></button>
                 </div>
             </div>
-            <!-- 보유중/ 판매중 토글 -->
-            <div class="nft__container">
-                <div class="check__txt_1 selected">
-                    ON STOCK
-                </div>
-                <div class="check__container">
-                    <input type="checkbox" id="switch" name="mode"/>
-                    <label for="switch">Toggle</label>
-                </div>
-                <div class="check__txt_2">
-                    ON SALE
-                </div>
-            </div>
-            <!-- NFT 목록들-->
+            <!-- 승인 받을 NFT들 보이는 부분 -->
+            <h1 class="memboard">Approval</h1>
             <div class="cartWrap tbl-bg">
                 <!-- 첫번째 NFT-->
-                <div class="items" data-type="ON STOCK">
+                <div class="items">
                     <div class="infoWrap">
                         <div class="cartSection">
                             <img src="img/collect.png" class="itemImg"/>
                             <p class="itemNumber">Collection name<span>by User Name</span></p>
                             <h3>NFT name</h3>
-                            <p class="stockStatus">on stock</p>
                         </div>
                         <div class="cartSection">
-                            <input class="input__price" type="text" placeholder="how much?"/>
-                        </div>
-                        <div class="cartSection">
-                            <button class="sell__btn trigger">sell</button>
+                            <button class="appr__btn trigger">approve</button>
                         </div>
                     </div>
                 </div>
                 <!-- 두번째 NFT-->
-                <div class="items" data-type="ON STOCK">
+                <div class="items">
                     <div class="infoWrap">
                         <div class="cartSection">
                             <img src="img/collect.png" class="itemImg"/>
                             <p class="itemNumber">Collection name<span>by User Name</span></p>
                             <h3>NFT name</h3>
-                            <p class="stockStatus">on stock</p>
                         </div>
                         <div class="cartSection">
-                            <input class="input__price" type="text" placeholder="how much?"/>
-                        </div>
-                        <div class="cartSection">
-                            <button class="sell__btn trigger">sell</button>
+                            <button class="appr__btn trigger">approve</button>
                         </div>
                     </div>
                 </div>
                 <!-- 세번째 NFT-->
-                <div class="items" data-type="ON SALE">
+                <div class="items">
                     <div class="infoWrap">
                         <div class="cartSection">
                             <img src="img/collect.png" class="itemImg"/>
                             <p class="itemNumber">Collection name<span>by User Name</span></p>
                             <h3>NFT name</h3>
-                            <p class="stockStatus">on sale</p>
-                        </div>
-                        <div class="prodTotal cartSection">
-                            <img src="img/moonstone_2.png" class="moonstone">
-                            <p>30.00</p>
                         </div>
                         <div class="cartSection">
-                            <button class="cancle__btn trigger">cancle</button>
+                            <button class="appr__btn trigger">approve</button>
                         </div>
                     </div>
                 </div>
                 <!-- 네번째 NFT-->
-                <div class="items" data-type="ON SALE">
+                <div class="items">
                     <div class="infoWrap">
                         <div class="cartSection">
                             <img src="img/collect.png" class="itemImg"/>
                             <p class="itemNumber">Collection name<span>by User Name</span></p>
                             <h3>NFT name</h3>
-                            <p class="stockStatus">on sale</p>
-                        </div>
-                        <div class="prodTotal cartSection">
-                            <img src="img/moonstone_2.png" class="moonstone">
-                            <p>30.00</p>
                         </div>
                         <div class="cartSection">
-                            <button class="cancle__btn trigger">cancle</button>
+                            <button class="appr__btn trigger">approve</button>
                         </div>
                     </div>
                 </div>
             </div>
-        
         </section>
-        
-        <!-- modal -->
-        <div class="modal-wrapper">
-            <div class="modal">
-              <div class="modal__head">
-                <a class="btn-close trigger">
-                  <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
-              </div>
-              <div class="modal__content">
-                <h3></h3>
-                <div class="section__container">
-                    <button class="confirm__btn">YES</button>
-                    <button class="confirm__btn">No</button>
-                </div>
-              </div>
-            </div>
-        </div>
 
         <!-- foot -->
         <section id="foot">
