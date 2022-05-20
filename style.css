@@ -91,12 +91,18 @@ button:active {
 figure:active{
     transform: scale(0.95);
 }
-li:active{
+.navbar__menu li:active{
     transform: scale(0.95);
 }
 p{
     margin-top: 0;
     margin-bottom: 0;
+}
+.txt-center{
+    text-align: center;
+}
+.txt-right{
+    text-align: right;
 }
 
 /* section common */
@@ -552,12 +558,12 @@ a.remove:hover {
 	align-items: center;
 	height: 150px;
 }
-input[type=checkbox]{
+.check__container input[type=checkbox]{
 	height: 0;
 	width: 0;
 	visibility: hidden;
 }
-label {
+.check__container label {
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 100px;
@@ -567,7 +573,7 @@ label {
 	border-radius: 100px;
 	position: relative;
 }
-label:after {
+.check__container label:after {
 	content: '';
 	position: absolute;
 	top: 5px;
@@ -578,14 +584,14 @@ label:after {
 	border-radius: 90px;
 	transition: 320ms;
 }
-input:checked + label {
+.check__container input:checked + label {
 	background: var(--color-pink-1);
 }
-input:checked + label:after {
+.check__container input:checked + label:after {
 	left: calc(100% - 5px);
 	transform: translateX(-100%);
 }
-label:active:after {
+.check__container label:active:after {
 	width: 130px;
 }
 .check__txt[data-filter='ON STOCK']{
@@ -595,6 +601,7 @@ label:active:after {
     color : var(--textColor);
 }
 .input__price{
+    margin-top: 5px;
     width:80px;
 }
 .sell__btn, .cancle__btn, .confirm__btn{
@@ -747,4 +754,166 @@ table.memboard{
 }
 .appr__btn:hover{
     background: var(--color-pink-1);
+}
+
+/* 전체 nft 조회 화면 - 좌측 필터 부분*/
+.with-filter{
+    width: 100%;
+    display: flex;
+    background-color: var(--color-pink-1);
+}
+.left__container {
+    float: left;
+	width: 300px;
+    background-color: var(--color-pink-2);
+}
+.left__container > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+ul.dropdown-menu > li{
+    background: var(--color-grey);
+}
+ul.dropdown-menu > li:hover{
+    background: var(--color-light-grey);
+}
+ul.dropdown-menu > li label{
+	display: inline-block;
+	margin-right: 10px; 
+}
+
+
+.search__btn{
+    font-size: var(--font-micro);
+    font-weight: var(--weight-semi-bold);
+    color: #fff;
+    background: var(--color-violet-3);
+    margin-top: 10px;
+    margin-left: 10px;;
+    margin-right: 20px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+.search__btn:hover{
+    background: var(--color-pink-1);
+}
+.filter__title {
+    text-align: center;
+    line-height: 1.4;
+    color: var(--color-light-white);
+    background-color: var(--color-pink-2);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+}
+.filter__dropdown a { text-decoration: none; }
+.filter__dropdown li { list-style: none; }
+.filter__dropdown [data-toggle="dropdown"]{
+    position: relative;
+	display: block;
+	color: white;
+	background: var(--color-pink-2);
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+	padding: 10px;
+}
+.filter__dropdown [data-toggle="dropdown"]:hover {
+    background: var(--color-pink-1);
+}
+.icon-arrow {
+    position: absolute;
+    display: block;
+    font-size: 0.7em;
+    color: #fff;
+    top: 14px;
+    right: 10px;
+}
+.icon-arrow.open{
+    transform: rotate(-180deg);
+    transition: transform .6s;
+}
+.icon-arrow.close{
+    transform: rotate(0deg);
+	transition: transform .6s;
+}
+.filter__dropdown.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.filter__dropdown.dropdown-menu li{
+    padding: 0;
+}
+.filter__dropdown.dropdown-menu li input, .dropdown-menu li label{
+    display: block;
+	color: var(--color-white);
+	background: var(--color-grey);
+    text-shadow: 0 -1px 0 rgba(255,255,255,0.3);
+	padding: 10px 10px;
+}
+.filter__dropdown.dropdown-menu li input:hover, .dropdown-menu li label:hover{
+    background: var(--color-light-grey);
+}
+.show, .hide {
+    transform-origin: 50%, 0%;
+}
+.show {
+    display: block;
+    max-height: 9999px;
+    transform: scaleY(1);
+    animation: showAnimation .5s ease-in-out;
+    transition: max-height 1s ease-in-out;
+}
+.hide {
+    max-height: 0;
+    transform: scaleY(0);
+    animation: hideAnimation .4s ease-out;
+    transition: max-height .6s ease-out;
+}
+@keyframes showAnimation {
+	0% { transform: scaleY(0.1);}
+	40% { transform: scaleY(1.04);}
+	60% { transform: scaleY(0.98);}
+	80% { transform: scaleY(1.04);}
+	100% { transform: scaleY(0.98);}				
+	80% { transform: scaleY(1.02);}
+	100% { transform: scaleY(1);}
+}
+@keyframes hideAnimation {
+    0% { transform: scaleY(1);}
+    60% { transform: scaleY(0.98);}
+    80% { transform: scaleY(1.02);}
+    100% { transform: scaleY(0);}
+}
+
+/* 전체 nft 조회 화면 - 우측 nft 리스트 */
+.about__right-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 20px 0;
+}
+.about__right-container button{
+    height: 20px;
+    width: 50px;
+    margin-left: 5px;
+    font-size: var(--font-medium);
+}
+.about__right-container button:hover{
+    background: var(--color-white);
+    color: var(--color-pink-1);
+}
+
+/* 전체 nft 조회 화면 - 우측 nft 리스트 (결과값 출력) */
+input.quicksearch, .output {
+    display: block;
+	line-height: normal;
+    padding: 0px 8px;
+	margin: 0px;
+    border: 1px solid #D6D6D6; /*osv:border*/
+    height: 38px;
+    line-height: 38px;
+    min-width: 400px;
+    margin: 10px;
 }

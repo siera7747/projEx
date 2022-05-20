@@ -12,17 +12,23 @@ document.addEventListener('scroll', () => {
     }
 });
 
+/*
 // 토글 체크
-var checkbox = document.querySelector('input[name=mode]');
+var checkbox = document.querySelector('.check__container input[name=mode]');
 checkbox.addEventListener('change', function() {
-    if(this.checked) {
-        $('.check__txt_1').removeAttr('data-filter')
-        $('.check__txt_2').attr('data-filter', 'ON SALE')
-    } else {
-        $('.check__txt_1').attr('data-filter', 'ON STOCK')
-        $('.check__txt_2').removeAttr('data-filter')
+    if(checkbox==null){
+        return;
+    }else{
+        if(this.checked) {
+            $('.check__txt_1').removeAttr('data-filter')
+            $('.check__txt_2').attr('data-filter', 'ON SALE')
+        } else {
+            $('.check__txt_1').attr('data-filter', 'ON STOCK')
+            $('.check__txt_2').removeAttr('data-filter')
+        }
     }
-})
+})*/
+
 
 // 보유중, 판매중 필터링 (미완성)
 /*
@@ -74,3 +80,35 @@ $(window).on("load resize ", function() {
     var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
     $('.tbl-header').css({'padding-right':scrollWidth});
 }).resize();
+
+/* 드롭다운 메뉴 */
+var dropdown = document.querySelectorAll('.filter__dropdown');
+var dropdownArray = Array.prototype.slice.call(dropdown,0);
+dropdownArray.forEach((document) => {
+        var button = document.querySelector('a[data-toggle="dropdown"]');
+        var menu = document.querySelector('.dropdown-menu');
+        var arrow = button.querySelector('i.icon-arrow');
+        if(button==null){
+            return;
+        }else{
+            button.onclick = function (event) {
+                if (!menu.hasClass('show')) {
+                    menu.classList.add('show');
+                    menu.classList.remove('hide');
+                    arrow.classList.add('open');
+                    arrow.classList.remove('close');
+                    event.preventDefault();
+                }
+                else {
+                    menu.classList.remove('show');
+                    menu.classList.add('hide');
+                    arrow.classList.remove('open');
+                    arrow.classList.add('close');
+                    event.preventDefault();
+                }
+            };
+        }
+    })
+Element.prototype.hasClass = function(className) {
+    return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);
+};

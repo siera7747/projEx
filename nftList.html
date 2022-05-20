@@ -40,10 +40,220 @@
             <h2>작가명</h2>
         </section>
 
-        <!-- 다른사람 콜렉션안의 nft 보이는 부분 -->
-        <section id="archives" class="section">
+        <section class="with-filter">
+            <!-- 좌측 필터링 메뉴 -->
+            <div class="left__container">
+                <h2 class="filter__title">Searching Filter</h2>
+                <ul class="options">
+                    <li class="filter__dropdown">
+                        <a data-toggle="dropdown">Price
+                            <i class="fa-solid fa-chevron-down icon-arrow close"></i>
+                        </a>
+                        <ul class="dropdown-menu hide">
+                            <li class="txt-center">
+                                <input class="input__price" type="text" placeholder="Min">
+                                <b>TO</b>
+                                <input class="input__price" type="text" placeholder="Max">
+                            </li>
+                            <li class="txt-right">
+                                <button class="search__btn">Contact</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="filter__dropdown">
+                        <a data-toggle="dropdown">Background
+                            <i class="fa-solid fa-chevron-down icon-arrow close"></i>
+                        </a>
+                        <ul class="dropdown-menu hide">
+                            <li>
+                                <input type="checkbox" value=".dark-bg" id="dark-bg"/>
+                                <label for="dark-bg">dark</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".earth" id="earth"/>
+                                <label for="earth">earth</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".fire" id="fire"/>
+                                <label for="fire">fire</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".rainbow" id="rainbow"/>
+                                <label for="rainbow">rainbow</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".water" id="water"/>
+                                <label for="water">water</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".wind" id="wind"/>
+                                <label for="wind">wind</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="filter__dropdown">
+                        <a data-toggle="dropdown">Eyes
+                            <i class="fa-solid fa-chevron-down icon-arrow close"></i>
+                        </a>
+                        <ul class="dropdown-menu hide">
+                            <li>
+                                <input type="checkbox" value=".angry" id="angry">
+                                <label for="angry">angry</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".calm" id="calm">
+                                <label for="calm">calm</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".joy" id="joy">
+                                <label for="joy">joy</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="filter__dropdown">
+                        <a data-toggle="dropdown">Face
+                            <i class="fa-solid fa-chevron-down icon-arrow close"></i>
+                        </a>
+                        <ul class="dropdown-menu hide">
+                            <li>
+                                <input type="checkbox" value=".dark" id="dark">
+                                <label for="dark">dark</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".light" id="light">
+                                <label for="light">light</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".normal" id="normal">
+                                <label for="normal">normal</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="filter__dropdown">
+                        <a data-toggle="dropdown">Hair
+                            <i class="fa-solid fa-chevron-down icon-arrow close"></i>
+                        </a>
+                        <ul class="dropdown-menu hide">
+                            <li>
+                                <input type="checkbox" value=".cool" id="cool">
+                                <label for="cool">cool</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".cute" id="cute">
+                                <label for="cute">cute</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".genki" id="genki">
+                                <label for="genki">genki</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="filter__dropdown">
+                        <a data-toggle="dropdown">Mouth
+                            <i class="fa-solid fa-chevron-down icon-arrow close"></i>
+                        </a>
+                        <ul class="dropdown-menu hide">
+                            <li>
+                                <input type="checkbox" value=".bigsmile" id="bigsmile">
+                                <label for="bigsmile">bigsmile</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".dizzy" id="dizzy">
+                                <label for="dizzy">dizzy</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".picky" id="picky">
+                                <label for="picky">picky</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".sad" id="sad">
+                                <label for="sad">sad</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" value=".smile" id="smile">
+                                <label for="smile">smile</label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- 우측 다른사람 콜렉션안의 nft 보이는 부분 -->
             <div class="section__container">
-
+                <div class="about__right-container output">
+                    *
+                </div>
+                <!-- 첫번째 줄 -->
+                <div class="about__collection">
+                    <figure class="snip1336">
+                        <!-- 여기에 해당 NFT 이미지 보임 -->
+                        <img src="/img/collect.png"/>
+                        <figcaption>
+                            <h2>NFT Name<span>by User Name</span></h2>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336">
+                        <!-- 여기에 해당 NFT 이미지 보임 -->
+                        <img src="/img/collect.png"/>
+                        <figcaption>
+                            <h2>NFT Name<span>by User Name</span></h2>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336">
+                        <!-- 여기에 해당 NFT 이미지 보임 -->
+                        <img src="/img/collect.png"/>
+                        <figcaption>
+                            <h2>NFT Name<span>by User Name</span></h2>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- 두번째 줄 -->
+                <div class="about__collection">
+                    <figure class="snip1336">
+                        <!-- 여기에 해당 NFT 이미지 보임 -->
+                        <img src="/img/collect.png"/>
+                        <figcaption>
+                            <h2>NFT Name<span>by User Name</span></h2>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336">
+                        <!-- 여기에 해당 NFT 이미지 보임 -->
+                        <img src="/img/collect.png"/>
+                        <figcaption>
+                            <h2>NFT Name<span>by User Name</span></h2>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336">
+                        <!-- 여기에 해당 NFT 이미지 보임 -->
+                        <img src="/img/collect.png"/>
+                        <figcaption>
+                            <h2>NFT Name<span>by User Name</span></h2>
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- 세번째 줄 -->
+                <div class="about__collection">
+                    <figure class="snip1336">
+                        <!-- 여기에 해당 NFT 이미지 보임 -->
+                        <img src="/img/collect.png"/>
+                        <figcaption>
+                            <h2>NFT Name<span>by User Name</span></h2>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336">
+                        <!-- 여기에 해당 NFT 이미지 보임 -->
+                        <img src="/img/collect.png"/>
+                        <figcaption>
+                            <h2>NFT Name<span>by User Name</span></h2>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336">
+                        <!-- 여기에 해당 NFT 이미지 보임 -->
+                        <img src="/img/collect.png"/>
+                        <figcaption>
+                            <h2>NFT Name<span>by User Name</span></h2>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
 
