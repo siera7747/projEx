@@ -14,7 +14,7 @@
         </style>
         <link rel="stylesheet" href="./style.css">
         <script src="./jquery-3.6.0.js"></script> 
-        <script src="./script.js" defer></script> 
+        <script defer src="./script.js"></script> 
     </head>
     <!-- 여긴 로그인한 후의 마이페이지 안의 내 콜렉션 메뉴-->
     <body>
@@ -43,22 +43,23 @@
         <section id="archives" class="section">
             <div class="section__container">
                 <div class="work__categories">
-                    <button class="category__btn">MyCollection</button>
-                    <button class="category__btn">Likes</button>
-                    <button class="category__btn">Cart</button>
-                    <button class="category__btn">Buy&Sell</button>
+                    <button class="category__btn" onclick="location.href='#'">MyCollection</button>
+                    <button class="category__btn" onclick="location.href='./likes.html'">Likes</button>
+                    <button class="category__btn" onclick="location.href='./cart.html'">Cart</button>
+                    <button class="category__btn" onclick="location.href='./buynsell.html'">Buy&Sell</button>
                 </div>
             </div>
 
-            <!-- 콜렉션 보이는 부분 -->
             <div class="section__container">
+                <!-- 콜렉션 생성 버튼, 삭제 버튼 -->
                 <div class="about__disc">
                     <h2>My Collections</h2>
-                    <button><i class="fa-solid fa-cloud-arrow-up"></i></button>
+                    <button onclick="location.href='#open-modal'"><i class="fa-solid fa-folder-plus"></i></button>
                     <button><i class="fa-solid fa-trash-can"></i></button>
                 </div>
+                <!-- 콜렉션 보이는 부분 -->
                 <div class="about__collection">
-                    <figure class="snip1336">
+                    <figure class="snip1336" onclick="location.href='./myNFTList.html'">
                         <img src="/img/Cloud_night.png"/>
                         <figcaption>
                             <img src="img/coll-img.png" class="profile"/>
@@ -110,8 +111,79 @@
                     </figure>
                 </div>
             </div>
-               
         </section>
+
+        <!-- modal -->
+        <div id="open-modal" class="modal-window">
+            <div>
+                <a href="#" title="Close" class="modal-close">Close</a>
+                <h1>Create Your Collection</h1>
+                <!-- 콜렉션 배경이미지 추가 -->
+                <div class="img__container">
+                    <div class="coll-bg-upload">
+                        <div class="coll-bg-edit">
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                            <label for="imageUpload"></label>
+                        </div>
+                        <div class="coll-bg-preview">
+                            <div id="imagePreview" 
+                                style="background-image: url(img/img-upload.png);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 콜렉션 속성 추가 -->
+                <div class="todoList">
+                    <table class="coll-tbl" border="0">
+                        <tr>
+                            <td><b>Collection Name</b></td>
+                            <td><input type="text" placeholder="Input Collection's name"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Description</b></td>
+                            <td><input type="textarea" placeholder="Input Some Description"></td>
+                        </tr>
+                    </table>
+                    <div class="content">
+                        <form class="add">
+                            <input type="text" name="add" placeholder="Add Attr...">
+                            <div class="input-buttons">
+                                <a href="#0" class="add-todo">
+                                    <i class="fas fa-plus add plus-icon"></i>
+                                </a>
+                            </div>
+                        </form>
+                        <ul class="todos attr-align">
+                            <li>
+                                <label for="todo_1">
+                                    <b>background</b>
+                                </label>
+                                <i class="far fa-trash-alt delete"></i>
+                            </li>
+                
+                            <li>
+                                <label for="todo_2">
+                                    <b>hair</b>
+                                </label>
+                                <i class="far fa-trash-alt delete"></i>
+                            </li>
+                
+                            <li>
+                                <label for="todo_3">
+                                    <b>face</b>
+                                </label>
+                                <i class="far fa-trash-alt delete"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-btn">
+                        <button class="confirm__btn">OK</button>
+                        <button class="confirm__btn">CANCLE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- foot -->
         <section id="foot">

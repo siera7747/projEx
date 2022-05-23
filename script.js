@@ -12,13 +12,11 @@ document.addEventListener('scroll', () => {
     }
 });
 
-/*
-// 토글 체크
+
+// 토글에 따라 텍스트 색 변경
 var checkbox = document.querySelector('.check__container input[name=mode]');
-checkbox.addEventListener('change', function() {
-    if(checkbox==null){
-        return;
-    }else{
+window.onload=function(){
+    checkbox.addEventListener('change', function() {
         if(this.checked) {
             $('.check__txt_1').removeAttr('data-filter')
             $('.check__txt_2').attr('data-filter', 'ON SALE')
@@ -26,54 +24,77 @@ checkbox.addEventListener('change', function() {
             $('.check__txt_1').attr('data-filter', 'ON STOCK')
             $('.check__txt_2').removeAttr('data-filter')
         }
+    })
+}
+
+// 모달창
+// 모달창 이미지 업로드
+window.onload=function(){
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
     }
-})*/
-
-
-// 보유중, 판매중 필터링 (미완성)
-/*
-const stockContainer = document.querySelector('.check__txt_1');
-const cartWrapContainer = document.querySelector('.cartWrap');
-const items = document.querySelectorAll('.items');
-
-toggleContainer.addEventListener('click', (e) => {
-    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
-    if (filter == null) {
-        return;
-    } else {
-        // 선택된 버튼만 활성화
-        const active = document.querySelector('.category__btn.selected');
-        active.classList.remove('selected');
-        const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
-        target.classList.add('selected');
-
-        projectContainer.classList.add('ani-out');
-        setTimeout(() => {
-            projects.forEach((project) => {
-                if (filter === '*' || filter === project.dataset.type) {
-                    project.classList.remove('invisible');
-                } else {
-                    project.classList.add('invisible');
-                }
-            });
-            projectContainer.classList.remove('ani-out');
-        }, 300);
-    }
-    
-});
-*/
-
-// 모달창 (미완성)
-/*
-$( document ).ready(function() {
-    $('.trigger').on('click', function() {
-        const val = document.querySelector('.trigger').innerText;
-        $('.modal-wrapper').toggleClass('open');
-        $('.page-wrapper').toggleClass('blur-it');
-        console.log(val);
-        return false;
+    $("#imageUpload").change(function() {
+        readURL(this);
     });
-});*/
+}
+
+//모달창 콜렉션 생성 - 속성 추가
+const submitForm = document.querySelector(".add");
+const addButton = document.querySelector(".add-todo");
+const todoList = document.querySelector(".todos");
+const list = document.querySelectorAll(".todos li");
+
+let listLenght = list.lenght;
+
+const generateTempalate = (todo) => {
+const html = `<li>
+                <label for="todo_${listLenght}">
+                    <b>${todo}</b>
+                </label>
+                <i class="far fa-trash-alt delete"></i>
+            </li>`;
+todoList.innerHTML += html;
+};
+
+function addTodos(e) {
+    e.preventDefault();
+    const todo = submitForm.add.value.trim();
+    if (todo.length) {
+        listLenght = listLenght + 1;
+        generateTempalate(todo);
+        submitForm.reset();
+    }
+}
+function deleteTodos(e) {
+    if (e.target.classList.contains("delete")) {
+        e.target.parentElement.remove();
+    }
+}
+
+window.onload = function(){
+    submitForm.addEventListener("submit", addTodos);
+    addButton.addEventListener("click", addTodos);
+    todoList.addEventListener("click", deleteTodos);
+}
+
+/* 좋아요 버튼 누르면 누른 표시*/
+window.onload=function(){
+    document.addEventListener('DOMContentLoaded', function() {
+        var likeButton = document.getElementById('like-button');
+        likeButton.addEventListener('click', function() {
+          window.lb = likeButton;
+          likeButton.classList.toggle('selected');
+        });
+    }, false);
+}
 
 /* 관리자 - 회원테이블 */
 $(window).on("load resize ", function() {
@@ -84,7 +105,9 @@ $(window).on("load resize ", function() {
 /* 드롭다운 메뉴 */
 var dropdown = document.querySelectorAll('.filter__dropdown');
 var dropdownArray = Array.prototype.slice.call(dropdown,0);
-dropdownArray.forEach((document) => {
+
+window.onload=function(){
+    dropdownArray.forEach((document) => {
         var button = document.querySelector('a[data-toggle="dropdown"]');
         var menu = document.querySelector('.dropdown-menu');
         var arrow = button.querySelector('i.icon-arrow');
@@ -112,3 +135,5 @@ dropdownArray.forEach((document) => {
 Element.prototype.hasClass = function(className) {
     return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);
 };
+}
+

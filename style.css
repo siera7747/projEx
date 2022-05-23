@@ -233,7 +233,7 @@ p{
 }
 .about__disc button{
     height: 50px;
-    width: 50px;
+    width: 100px;
     margin-left: 5px;
     font-size: var(--font-medium);
 }
@@ -333,8 +333,8 @@ p{
     margin-bottom: 5em;
 }
 .heading {
-  padding: 1em 0;
-  border-bottom: 1px solid var(--color-violet-1);
+    padding: 1em 0;
+    border-bottom: 1px solid var(--color-violet-1);
 }
 .heading h1 {
     font-size: 2em;
@@ -453,8 +453,8 @@ a.remove:hover {
     letter-spacing: -.025em;
 }
 .btn.promoCode{
-   font-size: .85em;
-   padding: .5em 2em;
+    font-size: .85em;
+    padding: .5em 2em;
 }
 .btn:link , .btn:visited {
     text-decoration: none;
@@ -506,9 +506,9 @@ a.remove:hover {
     text-align: right;   
 }
 .subtotal.totalRow.label {
-   font-size: .85em;
-   text-transform: uppercase;
-   color: #777;
+    font-size: .85em;
+    text-transform: uppercase;
+    color: #777;
 }
 .subtotal.totalRow.value { 
     letter-spacing: -.025em;
@@ -619,64 +619,231 @@ a.remove:hover {
 }
 
 /* 모달창 */
-.page-wrapper {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-}
-.blur-it {
-    filter: blur(4px);
-}
-.modal-wrapper {
-    width: 100%;
-    height: 100%;
+.modal-window, .modal-window-2{
     position: fixed;
-    top: 0; 
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
+    z-index: 999;
     visibility: hidden;
     opacity: 0;
-    transition: all 0.25s ease-in-out;
+    pointer-events: none;
+    transition: all 0.3s;
+    height: auto;
 }
-.modal-wrapper.open {
-    opacity: 1;
+.modal-window:target, .modal-window-2:target{
     visibility: visible;
-}
-.modal {
-    width: 300px;
-    height: 222px;
-    display: block;
-    position: absolute;
-    top: 50%; 
-    left: 50%;
-    opacity: 0;
-    transform: translate(-50%,-50%);
-    transition: all 0.5s ease-in-out;
-}
-.modal-wrapper.open .modal {
-    margin-top: -200px;
     opacity: 1;
+    pointer-events: auto;
 }
-.modal__head { 
-    width: 100%;
-    height: 55px;
-    padding: 10px 30px;
-    overflow: hidden;
-    background: var(--color-pink-1);
-    border-radius: 10px 10px 0 0;
+.modal-window > div{
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: url("img/Cloud_night.png") center/cover no-repeat;
+    border-radius: 1rem;
 }
-.btn-close {
-    font-size: 28px;
-    display: block;
-    float: right;
-    color: #fff;
+.modal-window header {
+    font-weight: bold;
+}
+.modal-window h1 {
+    font-size: 150%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+/*  모달창 이미지 업로드 */
+.img__container {
+    max-width: 960px;
+    margin: 30px auto;
+}
+.coll-bg-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 50px auto;
+}
+.coll-bg-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+.coll-bg-edit input {
+    display: none;
+}
+.coll-bg-edit input + label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
     cursor: pointer;
+    font-weight: normal;
+    transition: all .2s ease-in-out;
 }
-.modal__content {
-    background: url("img/forest_night.png") center/cover no-repeat;
-    padding: 10%;
+.coll-bg-edit input + label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+.coll-bg-edit input + label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
     text-align: center;
-    color: var(--color-pink-1);
+    margin: auto;
+}
+.coll-bg-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.coll-bg-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* 모달창 콜렉션명 입력, 속성 입력*/
+.todoList {
+    width: 320px;
+    height: 300px;
+    border-radius: 10px;
+    margin: auto;
+}
+.coll-tbl, .coll-tbl-2{
+    margin: auto;
+}
+.coll-tbl input[type="text"], .coll-tbl-2 input[type="text"]{
+    background-color : var(--color-light-white);
+    width: 150px;
+    height: 25px;
+    border-radius: 10px;
+}
+.coll-tbl input[type="textarea"]{
+    background-color : var(--color-light-white);
+    width: 150px;
+    height: 25px;
+    resize: none;
+    border-radius: 10px;
+}
+.content {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: var(--color-light-white);
     border-radius: 0 0 10px 10px;
+}
+.content form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 0 10px 0 5px;
+    border-bottom: 1px solid #cccccc;
+}
+.content form > * {
+    background: transparent;
+    border: none;
+    height: 35px;
+}
+.content input[type="text"] {
+    padding: 0 5px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-black);
+    outline: none;
+}
+.content input-buttons a {
+    text-decoration: none;
+}
+.content input-buttons i {
+    margin-top: 5px;
+    font-size: 20px;
+    color: var(--color-violet-3);
+}
+.content ul .todos {
+    margin-left: 0;
+    padding: 0;
+    letter-spacing: none;
+    height: 220px;
+    overflow: auto;
+}
+.attr-align {
+    padding: 0;
+}
+.content li {
+    user-select: none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.content li i {
+    color: var(--color-violet-3);
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+ul.todos {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+    height: 100px;
+    overflow: auto;
+}
+.plus-icon {
+    color:  var(--color-violet-3);
+}
+
+
+/* 모달창 닫기, 하단 버튼 */
+.modal-close {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+.modal-close:hover {
+    color: black;
+}
+.modal-window div:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+.modal-btn{
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm__btn{
+    width: 100px;
+    font-size: var(--font-micro);
+    font-weight: var(--weight-semi-bold);
+    color: #fff;
+    background: var(--color-violet-3);
+    border-radius: 40px;
+    margin-top: 10px;
+}
+.confirm__btn:hover{
+    background: var(--color-pink-1);
 }
 
 /* 관리자페이지 - 회원리스트  */
@@ -789,10 +956,8 @@ ul.dropdown-menu > li label{
     font-size: var(--font-micro);
     font-weight: var(--weight-semi-bold);
     color: #fff;
-    background: var(--color-violet-3);
-    margin-top: 10px;
-    margin-left: 10px;;
-    margin-right: 20px;
+    background: var(--color-pink-2);
+    margin: 10px 20px 10px 10px;
     padding: 10px 10px;
     border-radius: 10px;
 }
@@ -905,7 +1070,7 @@ ul.dropdown-menu > li label{
     color: var(--color-pink-1);
 }
 
-/* 전체 nft 조회 화면 - 우측 nft 리스트 (결과값 출력) */
+/* 전체 nft 조회 화면 - 우측 nft 리스트 */
 input.quicksearch, .output {
     display: block;
 	line-height: normal;
@@ -917,3 +1082,142 @@ input.quicksearch, .output {
     min-width: 400px;
     margin: 10px;
 }
+
+/* nft 업로드, 삭제 버튼 */
+.nftUpDel{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.nftUpDel button{
+    width: 100px;
+    font-size: var(--font-large);
+    padding: 5px 10px 5px 10px;
+}
+.nftUpDel button:hover{
+    background: var(--color-white);
+    color: var(--color-pink-1);
+}
+.todoList p{
+    color: white;
+    width: 100px;
+    margin: 0 auto;
+}
+
+/* nft 상세페이지 */
+.modal-window-2 > div{
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 30px;
+    background: url("img/Cloud_night.png") center/cover no-repeat;
+    border-radius: 1rem;
+}
+.spec-img__container {
+    max-width: 960px;
+    margin: 0px auto;
+    padding:0;
+}
+.nft-preview {
+    margin-top: 10px;
+    width: 400px;
+    height: 350px;
+}
+.nft-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.spec-content__container {
+    max-width: 960px;
+    margin: 0px auto;
+    padding: 20px;
+    text-align: center;
+}
+.spec-content__container h2{
+    margin-bottom: 0;
+}
+.spec-content__container p{
+    margin-bottom: 20px;
+}
+.spec-btn__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 240px;
+}
+.spec-btn-item1 button{
+    width: 70px;
+    height: 40px;
+    display: block;
+    text-align: center;
+    color: var(--color-dark-grey);
+    margin:5px;
+}
+.spec-btn-item1 button:hover{
+    color: white;
+    background-color: var(--color-pink-1);
+}
+#like-button {
+    width: 70px;
+    height: 40px;
+    color: var(--color-dark-grey);
+    font-size: 25px;
+    background-color: transparent;
+    padding: 5px 10px 2px 10px;
+    margin:5px;
+    box-shadow: 0 0.25em 1em -0.25em;
+    cursor: pointer;
+    transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+    outline: 0;
+}
+#like-button:hover {
+    color: var(--color-pink-2);
+}
+#like-button:active {
+    transform: scale(0.95);
+}
+#like-button.selected {
+    color: white;
+    background-color: var(--color-pink-2);
+    border-color: var(--color-pink-2);
+}
+#cart-button {
+    width: 70px;
+    height: 40px;
+    color: var(--color-dark-grey);
+    font-size: 25px;
+    background-color: transparent;
+    padding: 5px 10px 2px 10px;
+    margin:5px;
+    box-shadow: 0 0.25em 1em -0.25em;
+    cursor: pointer;
+    transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+    outline: 0;
+}
+#cart-button:hover {
+    color: white;
+    background-color: var(--color-pink-1);
+}
+.attr__container{
+    margin-top: 30px;
+}
+.attr__container td{
+    width: 150px;
+    background-color: var(--color-light-white);
+    padding: 2px 10px;
+}
+.attr__container td.attr{
+    border-radius: 10px 0 0 10px;
+}
+.attr__container td.val{
+    border-radius: 0 10px 10px 0;
+}
+
+/* 회원 정보 수정 */

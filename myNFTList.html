@@ -14,10 +14,10 @@
         </style>
         <link rel="stylesheet" href="./style.css">
         <script src="./jquery-3.6.0.js"></script> 
-        <script defer src="./script.js"></script>
+        <script defer src="./script.js"></script> 
     </head>
+    <!-- 여긴 로그인한 후의 마이페이지 안의 내 콜렉션 안의 nft 리스트-->
     <body>
-        <!-- 여긴 로그인 안해도 보이는 nft 목록 페이지-->
         <!-- navbar -->
         <nav id="navbar">
             <div class="navbar__logo">
@@ -25,15 +25,15 @@
             </div>
             <div class="navbar__menu">
                 <ul class="navbar__menu">
-                    <li class="navbar__menu__item active">Collection</li>
-                    <li class="navbar__menu__item">MyPage</li>
+                    <li class="navbar__menu__item">Collection</li>
+                    <li class="navbar__menu__item active">MyPage</li>
                     <li class="navbar__menu__item">Board</li>
-                    <li class="navbar__menu__item">SignIn</li>
+                    <li class="navbar__menu__item">SignOut</li>
                 </ul>
             </div>
         </nav>
 
-        <!-- 다른 사람의 home -->
+        <!-- 나의 콜렉션 home 메뉴 -->
         <section id="others-home">
             <img src="img/icon.png" alt="profile photo" class="others-home__avater">
             <h1>콜렉션명</h1>
@@ -42,7 +42,7 @@
                 <p>콜렉션 설명</p>
             </div>
         </section>
-
+        
         <section class="with-filter">
             <!-- 좌측 필터링 메뉴 -->
             <div class="left__container">
@@ -185,9 +185,14 @@
                 <div class="about__right-container output">
                     *
                 </div>
+                <!-- NFT 업로드 삭제 버튼 -->
+                <div class="nftUpDel">
+                    <button onclick="location.href='#open-modal'"><i class="fa-solid fa-cloud-arrow-up"></i></button>
+                    <button><i class="fa-solid fa-trash-can"></i></button>
+                </div>
                 <!-- 첫번째 줄 -->
                 <div class="about__collection">
-                    <figure class="snip1336" onclick="location.href='#open-modal'">
+                    <figure class="snip1336" onclick="location.href='#open-modal-2'">
                         <!-- 여기에 해당 NFT 이미지 보임 -->
                         <img src="/img/collect.png"/>
                         <figcaption>
@@ -260,8 +265,63 @@
             </div>
         </section>
 
-        <!-- modal -->
-        <div id="open-modal" class="modal-window-2">
+        <!-- 업로드하는 modal -->
+        <div id="open-modal" class="modal-window">
+            <div>
+                <a href="#" title="Close" class="modal-close">Close</a>
+                <h1>Uplaod Your NFT</h1>
+                <!-- nft 이미지 추가 -->
+                <div class="img__container">
+                    <div class="coll-bg-upload">
+                        <div class="coll-bg-edit">
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                            <label for="imageUpload"></label>
+                        </div>
+                        <div class="coll-bg-preview">
+                            <div id="imagePreview" 
+                                style="background-image: url(img/img-upload.png);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- nft 속성값 추가 -->
+                <div class="todoList">
+                    <table class="coll-tbl" border="0">
+                        <tr>
+                            <td><b>NFT Name</b></td>
+                            <td><input type="text" placeholder="Input NFT's name"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Price</b></td>
+                            <td><input type="textarea" placeholder="How much?"></td>
+                        </tr>
+                    </table>
+                    <p>+ Attribute</p>
+                    <table class="coll-tbl-2">
+                        <tr>
+                            <td><b>Background</b></td>
+                            <td><input type="text" placeholder="Input Attr Value"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Hair</b></td>
+                            <td><input type="text" placeholder="Input Attr Value"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Face</b></td>
+                            <td><input type="text" placeholder="Input Attr Value"></td>
+                        </tr>
+                    </table>
+                    <div class="modal-btn">
+                        <button class="confirm__btn">OK</button>
+                        <button class="confirm__btn">CANCLE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 내 NFT 상세 정보 보는 modal -->
+        <div id="open-modal-2" class="modal-window-2">
             <div>
                 <a href="#" title="Close" class="modal-close">Close</a>
                 <!-- nft 이미지 -->
@@ -284,16 +344,6 @@
                         <div class="spec-btn-item1">
                             <button>
                                 <b>price</b>
-                            </button>
-                        </div>
-                        <div>
-                            <button id="like-button">
-                                <i class="fa-solid fa-heart"></i>
-                            </button>
-                        </div>
-                        <div>
-                            <button id="cart-button">
-                                <i class="fa-solid fa-cart-arrow-down"></i>
                             </button>
                         </div>
                     </div>
@@ -321,5 +371,7 @@
         <!-- foot -->
         <section id="foot">
         </section>
+
     </body>
+    
 </html>

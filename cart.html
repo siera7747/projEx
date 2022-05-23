@@ -147,12 +147,55 @@
                             <span class="value"> 44.00</span>
                         </li>
                         <li class="totalRow">
-                            <a href="#" class="btn continue">Checkout</a>
+                            <a href="#open-modal" class="btn continue">Checkout</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
+
+        <!-- modal -->
+        <div id="open-modal" class="modal-window">
+            <div>
+                <a href="#" title="Close" class="modal-close">Close</a>
+                <h1>Confirm</h1>
+                <div><b>해당 작품을 구매하시겠습니까?</b></div>
+                <br>
+                <div class="modal-btn">
+                    <button class="confirm__btn" onclick="location.href='#open-modal-2'">YES</button>
+                    <button class="confirm__btn">NO</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 구매 성공 -->
+        <div id="open-modal-2" class="modal-window">
+            <div>
+                <a href="#" title="Close" class="modal-close">Close</a>
+                <h1>Confirm</h1>
+                <div><b>구매 완료 하였습니다.</b></div>
+                <br>
+                <div class="modal-btn">
+                    <button class="confirm__btn" onclick="location.href='./buynsell.html'">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 구매 실패 -->
+        <!--
+        <div id="open-modal-2" class="modal-window">
+            <div>
+                <a href="#" title="Close" class="modal-close">Close</a>
+                <h1>Confirm</h1>
+                <div><b>구매 실패 하였습니다.<br>
+                잔여 MoonStone을 확인해주세요.</br></div>
+                <br>
+                <div class="modal-btn">
+                    <button class="confirm__btn" onclick="location.href='./buynsell.html'">OK</button>
+                </div>
+            </div>
+        </div>
+        -->
 
         <!-- foot -->
         <section id="foot">

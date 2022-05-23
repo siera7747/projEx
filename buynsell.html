@@ -14,7 +14,7 @@
         </style>
         <link rel="stylesheet" href="./style.css">
         <script src="./jquery-3.6.0.js"></script> 
-        <script src="./script.js" defer></script> 
+        <script defer src="./script.js"></script> 
     </head>
     <body>
         <!-- navbar -->
@@ -76,7 +76,7 @@
                             <input class="input__price" type="text" placeholder="how much?"/>
                         </div>
                         <div class="cartSection">
-                            <button class="sell__btn trigger">sell</button>
+                            <button class="sell__btn trigger" onclick="location.href='#open-modal'">sell</button>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                             <p>30.00</p>
                         </div>
                         <div class="cartSection">
-                            <button class="cancle__btn trigger">cancle</button>
+                            <button class="cancle__btn trigger" onclick="location.href='#open-modal-2'">cancle</button>
                         </div>
                     </div>
                 </div>
@@ -138,20 +138,29 @@
         </section>
         
         <!-- modal -->
-        <div class="modal-wrapper">
-            <div class="modal">
-              <div class="modal__head">
-                <a class="btn-close trigger">
-                  <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
-              </div>
-              <div class="modal__content">
-                <h3></h3>
-                <div class="section__container">
+        <div id="open-modal" class="modal-window">
+            <div>
+                <a href="#" title="Close" class="modal-close">Close</a>
+                <h1>Confirm</h1>
+                <div><b>해당 작품을 판매 하시겠습니까?</b></div>
+                <br>
+                <div class="modal-btn">
                     <button class="confirm__btn">YES</button>
-                    <button class="confirm__btn">No</button>
+                    <button class="confirm__btn">NO</button>
                 </div>
-              </div>
+            </div>
+        </div>
+
+        <div id="open-modal-2" class="modal-window">
+            <div>
+                <a href="#" title="Close" class="modal-close">Close</a>
+                <h1>Confirm</h1>
+                <div><b>해당 작품의 판매를 취소 하시겠습니까?</b></div>
+                <br>
+                <div class="modal-btn">
+                    <button class="confirm__btn">YES</button>
+                    <button class="confirm__btn">NO</button>
+                </div>
             </div>
         </div>
 
