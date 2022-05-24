@@ -869,6 +869,12 @@ table.memboard{
     margin-top: 0px;
     border: 1px solid rgba(255,255,255,0.3);
 }
+.tbl-content-2{
+    height: 50px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
 .tbl-header th{
     padding: 20px 15px;
     text-align: center;
@@ -878,7 +884,14 @@ table.memboard{
     color: #fff;
     text-transform: uppercase;
 }
-.tbl-content td{
+.tbl-header td{
+    padding: 20px 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: var(--font-micro);
+    color: #fff;
+}
+.tbl-content td, .tbl-content-2 td{
     padding: 15px;
     text-align: center;
     vertical-align:middle;
@@ -906,6 +919,38 @@ table.memboard{
 }
 .tbl-content button:hover{
     background: var(--color-pink-1);
+}
+.updateform{
+    margin: auto;
+    width: 300px;
+    border: 2px solid var(--color-violet-1);
+    border-radius: 10px;
+    background: url(img/Cloud_night.png) center/cover no-repeat;
+}
+.updateform th:not(:last-child){
+    padding: 20px;
+}
+.updateform th:last-child{
+    padding: 20px;
+    background-color: var(--color-violet-1);
+}
+.updateform th:last-child input{
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    background: var(--color-violet-3);
+    border-radius: 40px;
+    margin-top: 10px;
+    box-shadow: 0 2px 2px #999;
+    cursor: pointer;
+    border: none;
+}
+.updateform th:last-child input:active {
+	transform: scale(0.95);
+}
+.updateform th:last-child input:hover{
+    background: var(--color-white);
+    color: var(--color-violet-3);
 }
 
 /* 관리자페이지 - 승인  */

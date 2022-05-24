@@ -14,8 +14,8 @@ document.addEventListener('scroll', () => {
 
 
 // 토글에 따라 텍스트 색 변경
-var checkbox = document.querySelector('.check__container input[name=mode]');
 window.onload=function(){
+    var checkbox = document.querySelector('.check__container input[name=mode]');
     checkbox.addEventListener('change', function() {
         if(this.checked) {
             $('.check__txt_1').removeAttr('data-filter')
@@ -95,6 +95,7 @@ window.onload=function(){
         });
     }, false);
 }
+
 
 /* 관리자 - 회원테이블 */
 $(window).on("load resize ", function() {
